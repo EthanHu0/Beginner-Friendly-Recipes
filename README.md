@@ -117,3 +117,8 @@ Significance Level (α): 0.05
 
 
 Based on the permutation test with 500 repetitions, the obtained p-value of 0.0 indicates strong evidence to reject the null hypothesis. This suggests a significant difference in the mean number of ingredients required for recipes between beginner and non-beginner tags.
+
+### Framing a Prediction Problem
+In the hypothesis testing section, we conducted tests to determine whether the distribution of various recipe features was influenced by the 'beginner' tag. Our analysis revealed that the 'beginner' tag does impact the values of several features. Consequently, we believe that the presence of the 'beginner' tag on a recipe can be predicted based on the features it possesses. Developing such a predictive model could prove valuable for efficiently tagging new recipe entries by features they have.
+
+### Baseline Model
