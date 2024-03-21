@@ -1,4 +1,3 @@
-***Beginner Friendly Recipes***
 **Name(s)**: Ethan Hu, Zhihan Li
 
 ### Introduction
@@ -59,15 +58,15 @@ This suggests that recipes containing fruit and beverages generally have shorter
 
 In our data analysis journey, understanding and addressing missing data is paramount to ensure the integrity of our insights. This step involves a meticulous examination of missingness patterns within our dataset to make informed decisions on how to handle them effectively.
 
-NMAR Analysis
+# NMAR Analysis
 
 We delve into the concept of Not Missing at Random (NMAR), where the absence of data is dependent on the column itself. In our case, the 'rating' column exhibits NMAR characteristics, primarily due to our data cleaning process. By replacing zero ratings with null values, we ensure the integrity of our analysis, as a zero rating often signifies no ratings rather than low scores. Similarly, the 'avg_rating' column showcases NMAR properties, as the mean rating calculation process carries forward these null values.
 
-Missingness Dependency
+# Missingness Dependency
 
 We conduct permutation tests to discern dependencies between missingness and other columns. For instance, we investigate whether the missingness of the 'rating' column depends on whether a recipe is labeled as diabetic. Our hypothesis testing, employing a significance level of 0.05, reveals no significant association between diabetic recipes and missing ratings, implying that the absence of ratings is unrelated to their diabetic categorization.
 
-Graphical Analysis
+# Graphical Analysis
 
 To visually grasp these dependencies, we utilize histograms to illustrate the relationship between missingness and other factors. The histogram "Number of Cooking Steps by Missingness of Recipe Rating" portrays how the presence or absence of ratings correlates with the number of cooking steps. Additionally, the histogram "Whether the Recipe is Diabetic by Missingness of Recipe Rating" provides insights into how diabetic classification relates to missing ratings.
 
@@ -89,12 +88,11 @@ Through this comprehensive assessment, we gain a deeper understanding of missing
 
 ### Hypothesis Testing
 
-Is there a difference in the number of ingredients between beginner and non-beginner recipes?
+# Is there a difference in the number of ingredients between beginner and non-beginner recipes?
 
 H0: There is no significant difference in the number of ingredients used (n_ingredients) between recipes labeled as beginner and recipes not labeled as beginner.
 H1: Recipies labeled as beginner tend to have less ingredients used (n_ingredients) compared to recipies that are not labeled as beginner.
 
-Test of Test: Permutation Test
 Test Statistic: Given the similarity in the distributions of number of cooking steps across recipes labeled as 'beginner' and those not labeled as such, we select difference in mean (mean_diff) as our test statistic to assess whether there is a significant difference in the number of cooking stepsbetween the two groups.
 Significance Level (α): 0.05
 
@@ -123,28 +121,23 @@ We want to create a model that predicts whether a recipe should be tagged as beg
 
 According to the outcomes of our hypothesis tests, it has been established that certain recipe features exhibit significant predictive capabilities regarding whether a recipe should be labeled as beginner:
 
-n_steps
-avg_rating
-n_ingredients
-popularity
+n_steps， avg_rating， n_ingredients， popularity
 
 In addition to the recipe features mentioned earlier, there could be other factors that contribute to predicting beginner tags. While these factors might not have been as prominent in our hypothesis tests or may not have been addressed, we believe they could still play a role in predicting beginner tags. Some of these additional features, based on our intuition, include:
 
 minutes, as it makes sense for beginner recipes to take a shorter time to cook since they are easier.
+
 the presense of the word 'beginner' in description
+
 the presense of the word 'beginner' in name, beginner_name
+
 contributor_id, as some contributors might have a tendency to publish beginner recipes
 
 We noticed an interesting column, calories, which contains values that are equal to zero. This is quite counterintuitive because everything except water will have some calories. For fun, in our modeling, we will also utilize the calories column.
 
 However, since we are attempting to build a model that assists in determining whether a newly entered recipe should be tagged as beginner, it makes sense to avoid using recipe features related to interaction, as interactions won't occur until someone has used it. Based on this consideration, we will be using the following features to train our model:
 
-n_steps
-n_ingredients
-minutes
-beginner_name
-contributor_id
-calories (for fun)
+n_steps， n_ingredients，minutes，beginner_name，contributor_id，calories (for fun)
 
 For efficiency, we will create a DataFrame consisting of a subset of features from the original food DataFrame that are relevant to our model creation. Additionally, we will retain only unique rows based on the 'recipe_id' column, as we will not be dealing with interaction data.
 
@@ -163,9 +156,9 @@ In an effort to enhance model performance beyond the feature engineering conduct
 ### Fairness Analysis
 One feature we utilized in our model to predict the beginner tag is the cooking time of the recipe in minutes. It's intuitive that beginner recipes typically have shorter cooking times compared to non-beginner recipes due to their lower complexity. After arbitrarily setting 30 minutes as the threshold to distinguish between recipes with shorter cook times (30 minutes or less) and those with longer cooking times (above 30 minutes), we observed that approximately 58% of recipes in the beginner group fell into the short cook time category, while about 42% did so in the non-beginner group. While these percentages align with our intuition, we are concerned that they are not significantly different. We worry that relying on cooking time as a predictive criterion might increase the chance of non-beginner recipes being falsely labeled as beginner recipes. Given our concern about the high false positive rate, we will focus on precision as the error metric to evaluate the fairness of our model.
 
-cook_time
-long     0.819396
-short    0.842481
+cook_time：
+long     0.819396，
+short    0.842481，
 dtype: float64
 
 <iframe
@@ -175,7 +168,9 @@ dtype: float64
   frameborder="0"
 ></iframe>
 Observed precision: 0.12131751227495902
+
 P-value: 0.022
+
 successfully reject the null hypothesis
 
 We obtained a p-value that is greater than the significance level. Therefore, we fail to find enough evidence to reject the null hypothesis. Conducting this test leads us to conclude that our model fairly labels recipes with both long and short cook times.
