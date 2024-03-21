@@ -3,32 +3,11 @@
 
 ### Introduction
 
+In our project, we're embarking on an in-depth analysis of a dataset to unravel the factors contributing to recipe success, as gauged by average ratings. Our primary inquiry revolves around identifying the key attributes that correlate with higher ratings. To achieve this, we'll employ a combination of exploratory data analysis techniques, including scatter plots, histograms, and pivot tables, to uncover patterns and trends within the dataset. Furthermore, we'll conduct hypothesis tests, such as permutation tests, to assess the significance of relationships between variables. Specifically, we'll explore hypotheses regarding the impact of factors like cooking time, recipe complexity, and nutritional content on recipe ratings. By rigorously analyzing the dataset using these methods, we aim to provide actionable insights for chefs, food bloggers, and recipe platforms seeking to enhance the appeal and success of their culinary creations.
+
 ### Data Cleaning and Exploratory Data Analysis
 
-name
-recipe_id
-minutes
-contributor_id
-submitted
-tags
-n_steps
-steps
-description
-ingredients
-...
-days
-months
-vegetables
-beginner
-diabetic
-beverages
-fruit
-popularity_x
-beginner_name
-popularity_y
-
-
-Some columns, like 'nutrition', contain values that look like lists, but are actually strings that look like lists. You may want to turn the strings into actual lists, or create columns for every unique value in those lists. For instance, per the data dictionary, each value in the 'nutrition' column contains information in the form "[calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), and carbohydrates (PDV)]"; you could create individual columns in your dataset titled 'calories', 'total fat', etc.
+There are 34 columns for total, and for some columns, like 'nutrition', contain values that look like lists, but are actually strings that look like lists. You may want to turn the strings into actual lists, or create columns for every unique value in those lists. For instance, per the data dictionary, each value in the 'nutrition' column contains information in the form "[calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), and carbohydrates (PDV)]"; you could create individual columns in your dataset titled 'calories', 'total fat', etc.
 
 
 <iframe
@@ -59,7 +38,7 @@ We try to find out what relates to the rating of a recipe, how long it tekes, ho
 <iframe
   src="assets/scatter-plot-fat-content-vs-average-rating.html"
   width="800"
-  height="200"
+  height="600"
   frameborder="0"
 ></iframe>
 
@@ -70,7 +49,7 @@ It appears that fat content has the strongest correlation with average rating am
 <iframe
   src="assets/pivot-table.html"
   width="800"
-  height="600"
+  height="200"
   frameborder="0"
 ></iframe>
 
