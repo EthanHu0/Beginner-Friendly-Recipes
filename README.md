@@ -3,7 +3,7 @@
 
 ### Introduction
 
-In our project, we're embarking on an in-depth analysis of a dataset to unravel the factors contributing to recipe success, as gauged by average ratings. Our primary inquiry revolves around identifying the key attributes that correlate with higher ratings. To achieve this, we'll employ a combination of exploratory data analysis techniques, including scatter plots, histograms, and pivot tables, to uncover patterns and trends within the dataset. Furthermore, we'll conduct hypothesis tests, such as permutation tests, to assess the significance of relationships between variables. Specifically, we'll explore hypotheses regarding the impact of factors like cooking time, recipe complexity, and nutritional content on recipe ratings. By rigorously analyzing the dataset using these methods, we aim to provide actionable insights for chefs, food bloggers, and recipe platforms seeking to enhance the appeal and success of their culinary creations.
+The dataset under investigation contains a plethora of culinary recipes, each detailed with various attributes ranging from cooking time and number of cooking steps to ingredient lists and contributor information. Amidst this rich dataset, a central question arises: whether the presence of a beginner tag is affected by recipe features such as cooking time, number of cooking steps, and total number of ingredients used, etc. By delving into this question, we aim to uncover insights that can aid both novice and experienced cooks alike in navigating recipe selections tailored to their skill levels. The dataset comprises a substantial number of rows, providing ample data for analysis. Relevant columns include 'cooking_time', 'n_steps', 'n_ingredients', and more, all contributing to our investigation into the influence of recipe attributes on the assignment of beginner tags.
 
 ### Data Cleaning and Exploratory Data Analysis
 
@@ -148,20 +148,13 @@ calories (for fun)
 
 For efficiency, we will create a DataFrame consisting of a subset of features from the original food DataFrame that are relevant to our model creation. Additionally, we will retain only unique rows based on the 'recipe_id' column, as we will not be dealing with interaction data.
 
-<iframe
-  src="assets/model_data.html"
-  width="800"
-  height="600"
-  frameborder="0"
-></iframe>
-
 After using Pipeline to create a Linear Regression model that uses multiple recipe features to predict thebeginner tag. Our baseline model achieved an accuracy score of 0.8609 in training, indicating that approximately 86.09% of the data points in the training set were correctly labeled by our model. Additionally, the baseline model achieved an accuracy score of 0.8602 on testing, suggesting that about 86.02% of the unseen data points were correctly labeled. Both the training and testing scores are high and similar in value, indicating that our model performs equally well on both seen and unseen data.
 
 ### Final Model
 In an effort to enhance model performance beyond the feature engineering conducted during baseline model training, we aim to further improve the features by transforming. Thoughtfully tuning the hyperparameters of our decision tree could also aid in enhancing our model performance. The hyperparameters in the baseline model were largely selected arbitrarily, so careful consideration of these parameters may lead to improvements.
 
 <iframe
-  src="assets/heatmap_data.html"
+  src="assets/confusion_matrix.html"
   width="800"
   height="600"
   frameborder="0"
