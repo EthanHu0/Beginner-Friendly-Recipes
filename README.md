@@ -1,4 +1,4 @@
-## recipes_and_ratings_project
+***Beginner Friendly Recipes***
 **Name(s)**: Ethan Hu, Zhihan Li
 
 ### Introduction
@@ -154,7 +154,7 @@ After using Pipeline to create a Linear Regression model that uses multiple reci
 In an effort to enhance model performance beyond the feature engineering conducted during baseline model training, we aim to further improve the features by transforming. Thoughtfully tuning the hyperparameters of our decision tree could also aid in enhancing our model performance. The hyperparameters in the baseline model were largely selected arbitrarily, so careful consideration of these parameters may lead to improvements.
 
 <iframe
-  src="assets/confusion_matrix.html"
+  src="assets/confusion_matrix.png"
   width="800"
   height="600"
   frameborder="0"
@@ -171,7 +171,7 @@ dtype: float64
 <iframe
   src="assets/fair_df.html"
   width="800"
-  height="600"
+  height="300"
   frameborder="0"
 ></iframe>
 Observed precision: 0.12131751227495902
