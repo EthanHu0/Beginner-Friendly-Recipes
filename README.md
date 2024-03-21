@@ -3,7 +3,7 @@
 [end]
 
 <iframe
-  src="assets/distribution-of-cooking-steps"
+  src="assets/distribution-of-cooking-steps.html"
   width="800"
   height="600"
   frameborder="0"
