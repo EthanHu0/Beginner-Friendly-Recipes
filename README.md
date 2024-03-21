@@ -1,6 +1,7 @@
-# recipes_and_ratings_project
-[start]
-[end]
+## recipes_and_ratings_project
+**Name(s)**: Ethan Hu, Zhihan Li
+
+
 
 <iframe
   src="assets/distribution-of-cooking-steps.html"
