@@ -19,3 +19,28 @@ Some columns, like 'nutrition', contain values that look like lists, but are act
   height="600"
   frameborder="0"
 ></iframe>
+
+This graph displays the distribution of the number of cooking steps for recipes.
+
+We try to find out what relates to the rating of a recipe, how long it tekes, how complicated it is or how fattening it is?
+
+<iframe
+  src="assets/scatter-plot-cooking-time-vs-average-rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/scatter-plot-n-steps-vs-average-rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/scatter-plot-fat-content-vs-average-rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
