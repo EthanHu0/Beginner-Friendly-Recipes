@@ -89,3 +89,31 @@ Through this comprehensive assessment, we gain a deeper understanding of missing
   height="600"
   frameborder="0"
 ></iframe>
+
+### Hypothesis Testing
+
+Is there a difference in the number of ingredients between beginner and non-beginner recipes?
+
+H0: There is no significant difference in the number of ingredients used (n_ingredients) between recipes labeled as beginner and recipes not labeled as beginner.
+H1: Recipies labeled as beginner tend to have less ingredients used (n_ingredients) compared to recipies that are not labeled as beginner.
+
+Test of Test: Permutation Test
+Test Statistic: Given the similarity in the distributions of number of cooking steps across recipes labeled as 'beginner' and those not labeled as such, we select difference in mean (mean_diff) as our test statistic to assess whether there is a significant difference in the number of cooking stepsbetween the two groups.
+Significance Level (α): 0.05
+
+<iframe
+  src="assets/number-of-ingredients-required-for-recipes.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/number-of-ingredients-histogram.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
+Based on the permutation test with 500 repetitions, the obtained p-value of 0.0 indicates strong evidence to reject the null hypothesis. This suggests a significant difference in the mean number of ingredients required for recipes between beginner and non-beginner tags.
