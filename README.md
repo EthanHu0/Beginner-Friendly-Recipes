@@ -44,3 +44,48 @@ We try to find out what relates to the rating of a recipe, how long it tekes, ho
   height="600"
   frameborder="0"
 ></iframe>
+
+It appears that fat content has the strongest correlation with average rating among these three variables.
+
+## Interesting Aggregates
+
+<iframe
+  src="assets/pivot-table.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+This suggests that recipes containing fruit and beverages generally have shorter cooking times compared to recipes without these ingredients.
+
+### Assessment of Missingness
+
+In our data analysis journey, understanding and addressing missing data is paramount to ensure the integrity of our insights. This step involves a meticulous examination of missingness patterns within our dataset to make informed decisions on how to handle them effectively.
+
+NMAR Analysis
+
+We delve into the concept of Not Missing at Random (NMAR), where the absence of data is dependent on the column itself. In our case, the 'rating' column exhibits NMAR characteristics, primarily due to our data cleaning process. By replacing zero ratings with null values, we ensure the integrity of our analysis, as a zero rating often signifies no ratings rather than low scores. Similarly, the 'avg_rating' column showcases NMAR properties, as the mean rating calculation process carries forward these null values.
+
+Missingness Dependency
+
+We conduct permutation tests to discern dependencies between missingness and other columns. For instance, we investigate whether the missingness of the 'rating' column depends on whether a recipe is labeled as diabetic. Our hypothesis testing, employing a significance level of 0.05, reveals no significant association between diabetic recipes and missing ratings, implying that the absence of ratings is unrelated to their diabetic categorization.
+
+Graphical Analysis
+
+To visually grasp these dependencies, we utilize histograms to illustrate the relationship between missingness and other factors. The histogram "Number of Cooking Steps by Missingness of Recipe Rating" portrays how the presence or absence of ratings correlates with the number of cooking steps. Additionally, the histogram "Whether the Recipe is Diabetic by Missingness of Recipe Rating" provides insights into how diabetic classification relates to missing ratings.
+
+Through this comprehensive assessment, we gain a deeper understanding of missingness patterns in our dataset, enabling us to make informed decisions in subsequent analyses and data handling processes.
+
+<iframe
+  src="assets/number-of-cooking-steps-by-missingness-of-recipe-rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+<iframe
+  src="assets/whether-recipe-is-diabetic-by-missingness-of-recipe-rating.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
