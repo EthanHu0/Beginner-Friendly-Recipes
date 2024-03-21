@@ -41,7 +41,7 @@ We try to find out what relates to the rating of a recipe, how long it tekes, ho
 <iframe
   src="assets/scatter-plot-fat-content-vs-average-rating.html"
   width="800"
-  height="600"
+  height="200"
   frameborder="0"
 ></iframe>
 
