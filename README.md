@@ -170,8 +170,9 @@ dtype: float64
 ></iframe>
 Observed precision: 0.12131751227495902
 
-P-value: 0.022
+P-value: 0.000
 
 successfully reject the null hypothesis
 
-We obtained a p-value that is greater than the significance level. Therefore, we fail to find enough evidence to reject the null hypothesis. Conducting this test leads us to conclude that our model fairly labels recipes with both long and short cook times.
+### Fairness Test Interpretation
+We obtained a p-value that is below the significance level, offering compelling evidence against the null hypothesis. With the successful rejection of the null hypothesis, we can conclude that our decision tree model has failed to achieve parity in precision and exhibits bias towards recipes with varying cooking times.
